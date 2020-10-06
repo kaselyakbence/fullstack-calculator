@@ -4,8 +4,6 @@ export const save = async (num) => {
     num,
   });
 
-  console.log(body);
-
   fetch("http://localhost:5000", {
     method: "POST",
     headers: {
