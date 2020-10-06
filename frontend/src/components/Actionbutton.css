@@ -1,0 +1,14 @@
+.act-button {
+  width: 33.33%;
+  height: 100%;
+
+  border: 1px solid black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 200%;
+
+  background-color: #f1c40f;
+}
