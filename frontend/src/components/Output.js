@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import "./Output.css";
 
+import { OutputContext } from "../context/OutputContext";
+
 const Output = () => {
-  return <div className="output">123</div>;
+  const [output] = useContext(OutputContext);
+
+  return <div className="output">{output}</div>;
 };
 
 export default Output;

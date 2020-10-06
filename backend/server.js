@@ -1,9 +1,14 @@
 const express = require("express");
 var fs = require("fs");
 
-const app = express();
+var cors = require("cors");
+const e = require("express");
+
+var app = express();
+
 const port = 5000;
 
+app.use(cors());
 app.use(express.json());
 
 // A rootra érkező get kéréssel lehet lekérni a számot
@@ -20,7 +25,7 @@ app.get("/", (req, res) => {
 app.post("/", async (req, res) => {
   let num = req.body.num;
 
-  if (!Number.isInteger(num)) {
+  if (!/^-?\d*\.?\d*$/.test(num)) {
     res.status(400).send({ error: "Invalid kérés!" });
   } else {
     try {

@@ -5,12 +5,12 @@ import Button from "./components/Button";
 import ActionButton from "./components/ActionButton";
 import Output from "./components/Output";
 
-const OutputContext = React.createContext("0");
+import OutputContextProvider from "./context/OutputContext";
 
 function App() {
   return (
     <div className="calculator">
-      <OutputContext.Provider value="0">
+      <OutputContextProvider>
         <div className="row">
           <Output />
         </div>
@@ -43,7 +43,7 @@ function App() {
           <ActionButton val={"S"} />
           <ActionButton val={"L"} />
         </div>
-      </OutputContext.Provider>
+      </OutputContextProvider>
     </div>
   );
 }
