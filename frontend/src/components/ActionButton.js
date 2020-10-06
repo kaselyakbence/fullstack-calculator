@@ -1,3 +1,7 @@
+/*
+  Button component for all the special actions
+*/
+
 import React, { useContext } from "react";
 import "./Actionbutton.css";
 
@@ -8,6 +12,7 @@ import { save, load } from "../api/api";
 const ActionButton = ({ val }) => {
   const [output, setOutput] = useContext(OutputContext);
 
+  //Checking the operation
   const handleClick = async () => {
     if (val === "C") {
       setOutput("");

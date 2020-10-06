@@ -1,3 +1,7 @@
+/*
+  Component for containing the application structure
+*/
+
 import React from "react";
 import "./App.css";
 

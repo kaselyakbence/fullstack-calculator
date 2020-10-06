@@ -1,3 +1,7 @@
+/*
+  Component for showing the state
+*/
+
 import React, { useContext } from "react";
 
 import "./Output.css";

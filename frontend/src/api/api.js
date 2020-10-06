@@ -1,3 +1,4 @@
+//Sending data to server
 export const save = async (num) => {
   let body = JSON.stringify({
     num,
@@ -16,6 +17,7 @@ export const save = async (num) => {
   });
 };
 
+//Loading data from server
 export const load = async () => {
   let data = await fetch("http://localhost:5000", {
     method: "GET",

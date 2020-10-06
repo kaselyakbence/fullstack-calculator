@@ -1,5 +1,10 @@
 # Tappointment tesztfeladat megoldás
 
-A backend node server.js
-A frontend npm start
-paranccsal indul
+Indítás:
+Backend: node server.js
+Frontend: npm start
+
+Gombok:
+C-clear
+S-save
+L-Load
