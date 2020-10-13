@@ -2,7 +2,9 @@
   width: 25%;
   height: 100%;
 
-  border: 1px solid black;
+  border: 1px solid #192a56;
+
+  color: #dcdde1;
 
   display: flex;
   align-items: center;
@@ -10,8 +12,5 @@
 
   font-size: 200%;
 
-  background-color: #ecf0f1;
-}
-.button .special {
-  background-color: #e67e22;
+  background-color: #273c75;
 }

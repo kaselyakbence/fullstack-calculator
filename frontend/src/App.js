@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="calculator">
       <OutputContextProvider>
-        <div className="row">
+        <div className="display-row">
           <Output />
         </div>
         <div className="row">
@@ -44,8 +44,6 @@ function App() {
         </div>
         <div className="row">
           <ActionButton val={"C"} />
-          <ActionButton val={"S"} />
-          <ActionButton val={"L"} />
         </div>
       </OutputContextProvider>
     </div>
