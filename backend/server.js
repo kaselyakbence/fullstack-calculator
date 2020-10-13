@@ -1,12 +1,15 @@
 const express = require("express");
-var fs = require("fs");
 
-var cors = require("cors");
-const e = require("express");
+require("dotenv").config({ path: __dirname + "/.env" });
 
-var app = express();
+require("./db/db");
 
-const port = 5000;
+const cors = require("cors");
+
+const numbersRouter = require("./routes/numbersRouter");
+const userRouter = require("./routes/userRouter");
+
+const app = express();
 
 //Cross-Origin Resource Sharing headers
 app.use(cors());
@@ -14,46 +17,18 @@ app.use(cors());
 //Parsing incoming request body to json
 app.use(express.json());
 
-// Handling a GET request to the root
-app.get("/", (req, res) => {
-  try {
-    let num = fs.readFileSync("./db/db.txt", "utf-8");
-    console.log(num);
-    res.send({ num });
-  } catch (error) {
-    //Send an error if reading the file was unsuccesfull
-    res.send({ error: "Nem sikerült a lekérés!" });
-  }
-});
+//Use numbers router
+app.use("/number", numbersRouter);
 
-// Handling a POST request to the root
-app.post("/", async (req, res) => {
-  let num = req.body.num;
-
-  //Check if the value is a number(with or without decimal)
-  if (!/^-?\d*\.?\d*$/.test(num)) {
-    res.status(400).send({ error: "Invalid kérés!" });
-  } else {
-    try {
-      //Save to a .txt file
-      fs.writeFileSync("./db/db.txt", num);
-
-      //Send an acknowledgement if saving was succesfull
-      res.send({ msg: "Saved" });
-    } catch (error) {
-      // Send error if saving was unsuccesfull
-      res.status(500).send({
-        error: "Nem sikerült a mentés",
-      });
-    }
-  }
-});
+//Use user router
+app.use("/user", userRouter);
 
 //If the page does not exist
 app.use(function (req, res, next) {
   res.status(404).send({ error: "Az oldal nem található" });
 });
 
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
