@@ -3,7 +3,7 @@
 */
 
 import React, { useContext } from "react";
-import "./Actionbutton.css";
+import "./ActionButton.css";
 
 import { OutputContext } from "../context/OutputContext";
 
@@ -11,7 +11,7 @@ const ActionButton = ({ val }) => {
   const [, setOutput] = useContext(OutputContext);
 
   //Checking the operation
-  const handleClick = async () => {
+  const handleClick = () => {
     if (val === "C") {
       setOutput("");
     }
