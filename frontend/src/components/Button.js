@@ -4,7 +4,7 @@
 
 import React, { useContext } from "react";
 
-import "./Button.css";
+import styles from "../style/Button.module.css";
 
 import { OutputContext } from "../context/OutputContext";
 import { MenuContext } from "../context/MenuContext";
@@ -45,7 +45,7 @@ const Button = ({ val }) => {
           ? { display: "none" }
           : { display: "flex" }
       }
-      className="button"
+      className={styles.button}
       onClick={handleClick}
     >
       {val}

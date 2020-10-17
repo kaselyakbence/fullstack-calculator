@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import "./Fab.css";
+import styles from "../style/Fab.module.css";
 
 import { MenuContext } from "../context/MenuContext";
 
@@ -12,7 +12,7 @@ const Fab = () => {
   };
 
   return (
-    <div className="fab" onClick={handleClick}>
+    <div className={styles.fab} onClick={handleClick}>
       <p>...</p>
     </div>
   );

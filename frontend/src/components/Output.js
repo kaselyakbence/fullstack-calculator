@@ -4,7 +4,7 @@
 
 import React, { useContext } from "react";
 
-import "./Output.css";
+import styles from "../style/Output.module.css";
 
 import Backbutton from "./BackButton";
 
@@ -14,7 +14,7 @@ const Output = () => {
   const [output] = useContext(OutputContext);
 
   return (
-    <div className="output">
+    <div className={styles.output}>
       <Backbutton />
       <p>{output}</p>
     </div>

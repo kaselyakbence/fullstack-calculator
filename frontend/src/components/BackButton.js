@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 import BackSVG from "../assets/back.svg";
 
-import "./Backbutton.css";
+import styles from "../style/BackButton.module.css";
 
 import { OutputContext } from "../context/OutputContext";
 
@@ -15,7 +15,7 @@ const Backbutton = () => {
 
   return (
     <div onClick={handleClick}>
-      <img className="back-button" src={BackSVG} alt="Delete button" />
+      <img className={styles.backButton} src={BackSVG} alt="Delete button" />
     </div>
   );
 };

@@ -3,7 +3,7 @@
 */
 
 import React, { useContext } from "react";
-import "./ActionButton.css";
+import styles from "../style/ActionButton.module.css";
 
 import { OutputContext } from "../context/OutputContext";
 
@@ -18,7 +18,7 @@ const ActionButton = ({ val }) => {
   };
 
   return (
-    <div className="act-button" onClick={handleClick}>
+    <div className={styles.actButton} onClick={handleClick}>
       {val}
     </div>
   );
