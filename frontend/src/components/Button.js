@@ -14,12 +14,19 @@ const Button = ({ val }) => {
   //Checking if its a valid valid operation
   const handleClick = () => {
     if (/=/.test(val)) {
-      setOutput(eval(output).toString());
+      setOutput((Math.round(eval(output) * 10000000) / 10000000).toString());
     } else if (
       /(?<!\S)\d(?!\S)/.test(val) ||
       /^[\s\d]*$/.test(output.slice(-1))
     ) {
-      setOutput(output + val);
+      if (val === "." || /^\d+$/.test(val)) {
+        try {
+          eval(output + val);
+          setOutput(output + val);
+        } catch (e) {}
+      } else {
+        setOutput(output + val);
+      }
     }
   };
 
