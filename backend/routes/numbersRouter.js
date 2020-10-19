@@ -26,19 +26,26 @@ numbersRouter.post("/:id", async (req, res) => {
     key,
     value,
   };
-
-  let user = await User.findOne({ id });
-
-  if (user) {
-    User.updateOne({ id }, { $push: { numbers: number } }, (error, succes) => {
-      if (error) {
-        res.status(400).send({ error: "Invalid request" });
-      } else {
-        res.send({ msg: "Done" });
-      }
-    });
-  } else {
+  if (key === "" || number === "") {
     res.status(400).send({ error: "UserId not valid" });
+  } else {
+    let user = await User.findOne({ id });
+
+    if (user) {
+      User.updateOne(
+        { id },
+        { $push: { numbers: number } },
+        (error, succes) => {
+          if (error) {
+            res.status(400).send({ error: "Invalid request" });
+          } else {
+            res.send({ msg: "Done" });
+          }
+        }
+      );
+    } else {
+      res.status(400).send({ error: "UserId not valid" });
+    }
   }
 });
 
