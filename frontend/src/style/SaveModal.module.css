@@ -1,0 +1,51 @@
+.saveModal {
+  background-color: #353b48;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+
+  width: 30vw;
+  height: 30vh;
+}
+.exitButton {
+  position: absolute;
+  top: 4%;
+  left: 2%;
+
+  min-width: 2vw;
+}
+
+.saveForm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+
+  height: 16%;
+  width: 90%;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.saveInput {
+  font-size: larger;
+  height: 100%;
+  width: 75%;
+}
+
+.saveCheck {
+}
+
+.saveModalDiv {
+}
+@media screen and (max-width: 1000px) {
+  .saveModal {
+    width: 90vw;
+    height: 30vh;
+  }
+}

@@ -1,18 +1,22 @@
 //Sending data to server
-export const save = async (num) => {
-  let body = JSON.stringify({
-    num,
-  });
+export const save = async (key, value) => {
+  let user = "85a5d3cd-e9d7-4b6b-a262-e29e3ff579ab";
 
-  fetch("http://localhost:5000", {
+  let body = {
+    key,
+    value,
+  };
+
+  let data = fetch(`http://localhost:5555/number/${user}`, {
     method: "POST",
+    mode: "cors",
     headers: {
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
     },
-
-    body,
+    body: JSON.stringify(body),
   });
+
+  return data;
 };
 
 //Loading data from server
