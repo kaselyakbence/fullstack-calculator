@@ -21,6 +21,8 @@ const SaveModal = (props) => {
 
     if (data.status === 200) {
       closeModal();
+    } else if (data.status === 400) {
+      console.log("Hibás bevitel");
     }
   };
 
@@ -42,6 +44,7 @@ const SaveModal = (props) => {
         />
         <img src={CheckSVG} alt="Ok" onClick={handleSave} />
       </div>
+      <p>Error</p>
     </div>
   );
 };

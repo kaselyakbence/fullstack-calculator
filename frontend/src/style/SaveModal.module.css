@@ -38,11 +38,6 @@
   width: 75%;
 }
 
-.saveCheck {
-}
-
-.saveModalDiv {
-}
 @media screen and (max-width: 1000px) {
   .saveModal {
     width: 90vw;

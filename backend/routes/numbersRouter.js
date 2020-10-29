@@ -26,7 +26,7 @@ numbersRouter.post("/:id", async (req, res) => {
     key,
     value,
   };
-  if (key === "" || number === "") {
+  if (key === "" || value === "") {
     res.status(400).send({ error: "UserId not valid" });
   } else {
     let user = await User.findOne({ id });
