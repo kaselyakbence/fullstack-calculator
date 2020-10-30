@@ -44,7 +44,6 @@ const SaveModal = (props) => {
         />
         <img src={CheckSVG} alt="Ok" onClick={handleSave} />
       </div>
-      <p>Error</p>
     </div>
   );
 };
