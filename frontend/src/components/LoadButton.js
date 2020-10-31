@@ -1,12 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { lazy, useContext, useState } from "react";
 import Modal from "react-modal";
 
 import { MenuContext } from "../context/MenuContext";
 
-import LoadModal from "./modals/LoadModal";
-
 import styles from "../style/Button.module.css";
 import modalStyles from "../style/LoadModal.module.css";
+
+const LoadModal = lazy(() => import("./modals/LoadModal"));
 
 const LoadButton = () => {
   const [menu, setMenu] = useContext(MenuContext);

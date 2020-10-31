@@ -1,7 +1,15 @@
-let user = "1ad166cb-0e3b-48d6-941b-7341c6e4552d";
+import { openDB } from "idb";
+
+const getUser = async () => {
+  const db = await openDB("Local_Data", 1);
+  let user = db.get("User", "userstring");
+
+  return user;
+};
 
 //Sending data to serve
 export const save = async (key, value) => {
+  let user = await getUser();
   let body = {
     key,
     value,
@@ -21,6 +29,7 @@ export const save = async (key, value) => {
 
 //Loading data from server
 export const load = async () => {
+  let user = await getUser();
   let data = await fetch(`http://localhost:5555/number/${user}`, {
     method: "GET",
     mode: "cors",
