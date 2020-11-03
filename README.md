@@ -1,22 +1,20 @@
-# Tappointment tesztfeladat megoldás
+# Calculator PWA
 
-## Használt technológiák
+## Állapot:
+
+     Fejlesztés alatt
+
+- Új design
+- Pwa funkciók bővítése
+
+## Használt technológiák:
 
 - [React](https://reactjs.org/)
 - [Nodejs](https://nodejs.org/en/)
 - [Express](https://expressjs.com/)
 
-## Indítás:
+## Használat:
 
-Backend: node server.js
-Frontend: npm start
-
-## Használat
-
-Gombok:
-
-- C-clear
-- S-save
-- L-Load
+Fejlesztés alatt
 
 #### Készítette: Kaselyák Bence
