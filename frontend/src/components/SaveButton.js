@@ -1,4 +1,4 @@
-import React, { useContext, useState, lazy } from "react";
+import React, { useContext, useState } from "react";
 import Modal from "react-modal";
 
 import { MenuContext } from "../context/MenuContext";
@@ -6,7 +6,7 @@ import { MenuContext } from "../context/MenuContext";
 import styles from "../style/Button.module.css";
 import modalStyles from "../style/SaveModal.module.css";
 
-const SaveModal = lazy(() => import("./modals/SaveModal"));
+import SaveModal from "./modals/SaveModal";
 
 Modal.setAppElement("#root");
 

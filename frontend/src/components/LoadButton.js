@@ -6,7 +6,7 @@ import { MenuContext } from "../context/MenuContext";
 import styles from "../style/Button.module.css";
 import modalStyles from "../style/LoadModal.module.css";
 
-const LoadModal = lazy(() => import("./modals/LoadModal"));
+import LoadModal from "./modals/LoadModal";
 
 const LoadButton = () => {
   const [menu, setMenu] = useContext(MenuContext);
