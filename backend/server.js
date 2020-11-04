@@ -1,4 +1,5 @@
 const express = require("express");
+const helmet = require("helmet");
 
 require("dotenv").config({ path: __dirname + "/.env" });
 
@@ -10,6 +11,9 @@ const numbersRouter = require("./routes/numbersRouter");
 const userRouter = require("./routes/userRouter");
 
 const app = express();
+
+//Helmet middleware for security
+app.use(helmet());
 
 //Cross-Origin Resource Sharing headers
 app.use(cors());

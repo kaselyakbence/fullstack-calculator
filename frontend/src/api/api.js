@@ -15,7 +15,7 @@ export const save = async (key, value) => {
     value,
   };
 
-  let data = fetch(`http://localhost:5555/number/${user}`, {
+  let data = fetch(`https://www.calc.kaselyakbence.me/api/number/${user}`, {
     method: "POST",
     mode: "cors",
     headers: {
@@ -30,13 +30,16 @@ export const save = async (key, value) => {
 //Loading data from server
 export const load = async () => {
   let user = await getUser();
-  let data = await fetch(`http://localhost:5555/number/${user}`, {
-    method: "GET",
-    mode: "cors",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  let data = await fetch(
+    `https://www.calc.kaselyakbence.me/api/number/${user}`,
+    {
+      method: "GET",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
 
   let json = await data.json();
 

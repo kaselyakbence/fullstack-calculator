@@ -74,7 +74,7 @@ self.addEventListener("message", (event) => {
 
 // Any other custom service worker logic can go here.
 self.addEventListener("install", async () => {
-  let user = await fetch(`http://localhost:5555/user`, {
+  let user = await fetch(`https://www.calc.kaselyakbence.me/api/user`, {
     method: "get",
     mode: "cors",
     headers: {
